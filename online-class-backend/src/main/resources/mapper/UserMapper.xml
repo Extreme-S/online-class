@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.online_xdclass.mapper.UserMapper">
+<mapper namespace="com.example.online_class.mapper.UserMapper">
 
 
     <insert id="save" parameterType="User">
@@ -30,7 +30,7 @@
     <!--根据userId查询用户-->
     <select id="findByUserId" resultType="User">
 
-      select  * from user where id=#{user_id}
+      select * from user where id=#{user_id}
 
     </select>
     

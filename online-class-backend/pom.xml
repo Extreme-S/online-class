@@ -9,12 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>online_xdclass</artifactId>
+	<artifactId>online_class</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>online_xdclass</name>
+	<name>online_class</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<!--springboot核⼼包-->
@@ -75,6 +75,21 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!--https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.16-->
+		<!--scope=provided，说明它只在编译阶段生效，不需要打入包中, Lombok在编译期将带Lombok注解的Java文件正确编译为完整的Class文件-->
+<!--		<dependency>-->
+<!--			<groupId>org.projectlombok</groupId>-->
+<!--			<artifactId>lombok</artifactId>-->
+<!--			<version>1.18.16</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.20</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -82,6 +97,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.4.2</version>
 				<configuration>
 					<fork>true</fork><!--必须添加这个配置-->
 				</configuration>
