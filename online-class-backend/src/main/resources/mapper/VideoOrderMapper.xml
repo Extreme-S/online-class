@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.online_xdclass.mapper.VideoOrderMapper">
+
+
+    <select id="findByUserIdAndVideoIdAndState" resultType="VideoOrder">
+
+        select * from video_order where  user_id = #{user_id} and video_id = #{video_id} and state = #{state}
+
+    </select>
+
+
+    <insert id="saveOrder" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO `video_order` (`out_trade_no`, `state`, `create_time`, `total_fee`, `video_id`,
+         `video_title`, `video_img`, `user_id`)
+        VALUES
+        (#{outTradeNo,jdbcType=VARCHAR},#{state,jdbcType=INTEGER},#{createTime,jdbcType=TIMESTAMP},#{totalFee,jdbcType=INTEGER},
+        #{videoId,jdbcType=INTEGER},#{videoTitle,jdbcType=VARCHAR},#{videoImg,jdbcType=VARCHAR},#{userId,jdbcType=INTEGER});
+
+    </insert>
+
+    <select id="listOrderByUserId" resultType="VideoOrder">
+
+        select * from video_order where user_id=#{user_id} order by create_time desc
+
+    </select>
+
+</mapper>
